@@ -27,9 +27,9 @@ MaxConns = 200
 URL = "http://zkevm-mock-l1-network:8545"
 PrivateKeyPath = "/pk/keystore"
 PrivateKeyPassword = "testonly"
-PoEAddr = "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6"
-MaticAddr = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
-GlobalExitRootManagerAddr = "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9"
+PoEAddr = "0x7c404DeC80B6698B146402e3f6A80792D0422c6A"
+MaticAddr = "0x6e347f949db37d204A0be315A8A95eEe309120a3"
+GlobalExitRootManagerAddr = "0xE461e306A1396E23A125Db6181B480bFB7699E84"
 MultiGasProvider = false
 	[Etherscan]
 		ApiKey = ""
