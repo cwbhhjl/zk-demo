@@ -1,4 +1,12 @@
 version: "3.5"
+
+x-logging: 
+      &default-logging
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
 networks:
   default:
     name: zkevm
@@ -15,6 +23,7 @@ services:
       - ./test.keystore:/pk/keystore
       - ./config/test.node.config.toml:/app/config.toml
       - ./config/test.genesis.config.json:/app/genesis.json
+    logging: *default-logging
     command:
       - "/bin/sh"
       - "-c"
@@ -35,6 +44,7 @@ services:
       - ./test.keystore:/pk/keystore
       - ./config/test.node.config.toml:/app/config.toml
       - ./config/test.genesis.config.json:/app/genesis.json
+    logging: *default-logging
     command:
       - "/bin/sh"
       - "-c"
@@ -51,6 +61,7 @@ services:
       - ./test.keystore:/pk/keystore
       - ./config/test.node.config.toml:/app/config.toml
       - ./config/test.genesis.config.json:/app/genesis.json
+    logging: *default-logging
     command:
       - "/bin/sh"
       - "-c"
@@ -65,6 +76,7 @@ services:
       - ./test.keystore:/pk/keystore
       - ./config/test.node.config.toml:/app/config.toml
       - ./config/test.genesis.config.json:/app/genesis.json
+    logging: *default-logging
     command:
       - "/bin/sh"
       - "-c"
@@ -81,6 +93,7 @@ services:
       - ./test.keystore:/pk/keystore
       - ./config/test.node.config.toml:/app/config.toml
       - ./config/test.genesis.config.json:/app/genesis.json
+    logging: *default-logging
     command:
       - "/bin/sh"
       - "-c"
@@ -99,6 +112,7 @@ services:
       - "127.0.0.1:5432:5432"
     volumes:
       - ./config/init_db.sql:/docker-entrypoint-initdb.d/init.sql
+    logging: *default-logging
     environment:
       - POSTGRES_USER=state_user
       - POSTGRES_PASSWORD=state_password
@@ -121,6 +135,7 @@ services:
       - MIX_ENV=prod
       - LOGO=/images/blockscout_logo.svg
       - LOGO_FOOTER=/images/blockscout_logo.svg
+    logging: *default-logging
     command:
       ["/bin/sh", "-c", "mix do ecto.create, ecto.migrate; mix phx.server"]
 
@@ -138,6 +153,7 @@ services:
       - ./test.keystore:/pk/keystore
       - ./config/test.node.config.toml:/app/config.toml
       - ./config/test.genesis.config.json:/app/genesis.json
+    logging: *default-logging
     command:
       - "/bin/sh"
       - "-c"
@@ -153,6 +169,7 @@ services:
       - "127.0.0.1:50071:50071" # Executor
     volumes:
       - ./config/test.prover.config.json:/usr/src/app/config.json
+    logging: *default-logging
     command: >
       zkProver -c /usr/src/app/config.json
 
@@ -170,6 +187,7 @@ services:
       - ZKEVM_BRIDGE_DATABASE_PORT=5432
     volumes:
       - ./config/test.bridge.config.toml:/app/config.toml
+    logging: *default-logging
     command:
       - "/bin/sh"
       - "-c"
@@ -186,15 +204,16 @@ services:
     environment:
       - ETHEREUM_RPC_URL=https://exchaintestrpc.okex.org
       - ETHEREUM_EXPLORER_URL=https://www.oklink.com/zh-cn/okc-test/
-      - ETHEREUM_BRIDGE_CONTRACT_ADDRESS=0x6E27861a1A39E3E30732496799d639eB97A8aDF8
-      - ETHEREUM_PROOF_OF_EFFICIENCY_CONTRACT_ADDRESS=0x7c404DeC80B6698B146402e3f6A80792D0422c6A
-      - POLYGON_ZK_EVM_RPC_URL=http://localhost:8123
-      - POLYGON_ZK_EVM_EXPLORER_URL=http://localhost:4000
+      - ETHEREUM_BRIDGE_CONTRACT_ADDRESS=0xa82fF9aFd8f496c3d6ac40E2a0F282E47488CFc9
+      - ETHEREUM_PROOF_OF_EFFICIENCY_CONTRACT_ADDRESS=0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8
+      - POLYGON_ZK_EVM_RPC_URL=https://zkevm.exchaindevrpc.com
+      - POLYGON_ZK_EVM_EXPLORER_URL=http://zkevm-explorer.exchaindevrpc.com
       - POLYGON_ZK_EVM_BRIDGE_CONTRACT_ADDRESS=0x9d98deabc42dd696deb9e40b4f1cab7ddbf55988
       - POLYGON_ZK_EVM_NETWORK_ID=1
-      - BRIDGE_API_URL=http://localhost:8080
+      - BRIDGE_API_URL=http://zkevm-bridge.exchaindevrpc.com
       - USE_FIAT_EXCHANGE_RATES=false
       - SHOW_OUTDATED_NETWORK_MODAL=false
+    logging: *default-logging
 
 
 
