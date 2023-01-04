@@ -12,7 +12,7 @@ Port = "5435"
 MaxConns = 20
 
 [Etherman]
-L1URL = "http://zkevm-mock-l1-network:8545"
+L1URL = "https://exchaintestrpc.okex.org"
 L2URLs = ["http://zkevm-json-rpc:8123"]
 
 [Synchronizer]
@@ -29,10 +29,10 @@ GRPCPort = "9090"
 HTTPPort = "8080"
 
 [NetworkConfig]
-GenBlockNumber = 1
-PoEAddr = "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6"
-BridgeAddr = "0x0165878A594ca255338adfa4d48449f69242Eb8F"
-GlobalExitRootManAddr = "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9"
-MaticAddr = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+GenBlockNumber = 17479900
+PoEAddr = "0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8"
+BridgeAddr = "0xa82fF9aFd8f496c3d6ac40E2a0F282E47488CFc9"
+GlobalExitRootManAddr = "0x9E545E3C0baAB3E08CdfD552C960A1050f373042"
+MaticAddr = "0xc3e53F4d16Ae77Db1c982e75a937B9f60FE63690"
 L2BridgeAddrs = ["0x9d98deabc42dd696deb9e40b4f1cab7ddbf55988"]
-L1ChainID = 1337
+L1ChainID = 65
