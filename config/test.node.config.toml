@@ -65,6 +65,7 @@ DefaultSenderAddress = "0x1111111111111111111111111111111111111111"
 SyncInterval = "1s"
 SyncChunkSize = 100
 TrustedSequencerURI = ""
+GenBlockNumber = 1121818
 
 [Sequencer]
 MaxSequenceSize = "2000000"
