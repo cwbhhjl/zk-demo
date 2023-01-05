@@ -101,6 +101,7 @@ VerifyProofInterval = "90s"
 TxProfitabilityCheckerType = "acceptall"
 TxProfitabilityMinReward = "1.1"
 ProofStatePollingInterval = "5s"
+ChainID = 1002
 
 [GasPriceEstimator]
 Type = "default"
