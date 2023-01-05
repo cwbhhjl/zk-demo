@@ -133,6 +133,7 @@ services:
       - DATABASE_URL=postgres://state_user:state_password@zkevm-state-db:5432/l2_explorer_db
       - ECTO_USE_SSL=false
       - MIX_ENV=prod
+      - INDEXER_DISABLE_INTERNAL_TRANSACTIONS_FETCHER=true
       - LOGO=/images/blockscout_logo.svg
       - LOGO_FOOTER=/images/blockscout_logo.svg
     logging: *default-logging
@@ -203,7 +204,7 @@ services:
     #   - ./config/bridge-ui.env:/app/.env
     environment:
       - ETHEREUM_RPC_URL=https://exchaintestrpc.okex.org
-      - ETHEREUM_EXPLORER_URL=https://www.oklink.com/zh-cn/okc-test/
+      - ETHEREUM_EXPLORER_URL=https://www.oklink.com/zh-cn/okc-test
       - ETHEREUM_BRIDGE_CONTRACT_ADDRESS=0x202CCe504e04bEd6fC0521238dDf04Bc9E8E15aB
       - ETHEREUM_PROOF_OF_EFFICIENCY_CONTRACT_ADDRESS=0xf4B146FbA71F41E0592668ffbF264F1D186b2Ca8
       - POLYGON_ZK_EVM_RPC_URL=https://zkevm.exchaindevrpc.com
