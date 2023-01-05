@@ -136,6 +136,7 @@ services:
       - DATABASE_URL=postgres://state_user:state_password@zkevm-state-db:5432/l2_explorer_db
       - ECTO_USE_SSL=false
       - MIX_ENV=prod
+      - INDEXER_DISABLE_INTERNAL_TRANSACTIONS_FETCHER=true
       - LOGO=/images/blockscout_logo.svg
       - LOGO_FOOTER=/images/blockscout_logo.svg
     command:
