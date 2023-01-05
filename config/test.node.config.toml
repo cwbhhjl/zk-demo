@@ -25,6 +25,7 @@ MaxConns = 200
 
 [Etherman]
 URL = "https://exchaintestrpc.okex.org"
+L1ChainID = 65
 PrivateKeyPath = "/pk/keystore"
 PrivateKeyPassword = "testonly"
 PoEAddr = "0x1613beB3B2C4f22Ee086B2b38C1476A3cE7f78E8"
