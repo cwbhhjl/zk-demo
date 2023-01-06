@@ -169,7 +169,7 @@ services:
       - "127.0.0.1:50061:50061" # MT
       - "127.0.0.1:50071:50071" # Executor
     volumes:
-      - ./config/test.prover.config.json:/usr/src/app/config.json
+      - ./config/public.prover.config.json:/usr/src/app/config.json
     logging: *default-logging
     command: >
       zkProver -c /usr/src/app/config.json
