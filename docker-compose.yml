@@ -162,14 +162,14 @@ services:
 
   zkevm-prover:
     container_name: zkevm-prover
-    image: hermeznetwork/zkevm-prover:5a4c49d
+    image: hermeznetwork/zkevm-prover:b32eca0
     ports:
       - "127.0.0.1:50051:50051" # Prover
       - "127.0.0.1:50052:50052" # Mock prover
       - "127.0.0.1:50061:50061" # MT
       - "127.0.0.1:50071:50071" # Executor
     volumes:
-      - ./config/public.prover.config.json:/usr/src/app/config.json
+      - ./config/okc.prover.config.json:/usr/src/app/config.json
     logging: *default-logging
     command: >
       zkProver -c /usr/src/app/config.json
