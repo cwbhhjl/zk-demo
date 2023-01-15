@@ -28,9 +28,9 @@ URL = "https://exchaintestrpc.okex.org"
 L1ChainID = 65
 PrivateKeyPath = "/pk/keystore"
 PrivateKeyPassword = "testonly"
-PoEAddr = "0x3aAde2dCD2Df6a8cAc689EE797591b2913658659"
-MaticAddr = "0x3347B4d90ebe72BeFb30444C9966B2B990aE9FcB"
-GlobalExitRootManagerAddr = "0x5bf5b11053e734690269C6B9D438F8C9d48F528A"
+PoEAddr = "0x99dBE4AEa58E518C50a1c04aE9b48C9F6354612f"
+MaticAddr = "0x5fc748f1FEb28d7b76fa1c6B07D8ba2d5535177c"
+GlobalExitRootManagerAddr = "0x8A93d247134d91e0de6f96547cB0204e5BE8e5D8"
 MultiGasProvider = false
 	[Etherscan]
 		ApiKey = ""
@@ -66,7 +66,7 @@ DefaultSenderAddress = "0x1111111111111111111111111111111111111111"
 SyncInterval = "1s"
 SyncChunkSize = 100
 TrustedSequencerURI = ""
-GenBlockNumber = 17531500
+GenBlockNumber = 17758100
 
 [Sequencer]
 MaxSequenceSize = "2000000"
