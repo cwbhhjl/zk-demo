@@ -170,6 +170,7 @@ services:
       - "127.0.0.1:50071:50071" # Executor
     volumes:
       - ./config/okc.prover.config.json:/usr/src/app/config.json
+      - /data/zkevm/zkevm-proverjs/build/dst/config:/app/config
     logging: *default-logging
     command: >
       zkProver -c /usr/src/app/config.json
