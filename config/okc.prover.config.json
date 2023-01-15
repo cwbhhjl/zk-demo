@@ -68,16 +68,6 @@
     "storageRomFile": "config/scripts/storage_sm_rom.json",
 
     "outputPath": "output",
-
-    "constPolsFile": "zkevm.const",
-    "constPolsC12aFile": "zkevm.c12a.const",
-    "constantsTreeFile": "zkevm.consttree",
-    "constantsTreeC12aFile": "zkevm.c12a.consttree",
-    "verifierFile": "zkevm.verifier.dat",
-    "execC12aFile": "zkevm.c12a.exec",
-    "starkVerifierFile": "zkevm.g16.0001.zkey",
-    "starkInfoFile": "zkevm.starkinfo.json",
-    "starkInfoC12aFile": "zkevm.c12a.starkinfo.json",
     
     "databaseURL": "postgresql://state_user:state_password@zkevm-state-db:5432/prover_db",
     "dbNodesTableName": "state.nodes",
