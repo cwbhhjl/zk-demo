@@ -162,7 +162,7 @@ services:
 
   zkevm-prover:
     container_name: zkevm-prover
-    image: hermeznetwork/zkevm-prover:b32eca0
+    image: hermeznetwork/zkevm-prover:develop
     ports:
       - "127.0.0.1:50051:50051" # Prover
       - "127.0.0.1:50052:50052" # Mock prover
