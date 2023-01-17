@@ -171,6 +171,7 @@ services:
     volumes:
       - ./config/okc.prover.config.json:/usr/src/app/config.json
       - /data/zkevm/zkevm-proverjs/build/dst/config:/app/config
+      - ./output:/app/output
     logging: *default-logging
     command: >
       zkProver -c /usr/src/app/config.json

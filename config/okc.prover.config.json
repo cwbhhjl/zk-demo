@@ -62,7 +62,6 @@
     "mapConstPolsFile": false,
     "mapConstantsTreeFile": false,
     
-    "inputFile": "input_executor.json",
     "rom": "config/scripts/rom.json",
     "keccakScriptFile": "config/scripts/keccak_script.json",
     "storageRomFile": "config/scripts/storage_sm_rom.json",
