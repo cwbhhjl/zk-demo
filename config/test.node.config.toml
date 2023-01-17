@@ -24,13 +24,13 @@ EnableLog = false
 MaxConns = 200
 
 [Etherman]
-URL = "https://exchaintestrpc.okex.org"
-L1ChainID = 65
+URL = "https://goerli.infura.io/v3/bb410aa66f77424ab0260937600de8a5"
+L1ChainID = 5
 PrivateKeyPath = "/pk/keystore"
 PrivateKeyPassword = "testonly"
-PoEAddr = "0x7a28bC47A32374E49090E331ee4a04705B8C901A"
-MaticAddr = "0x6f6665e4Ab3B51B014B63a13089169BB81f053e1"
-GlobalExitRootManagerAddr = "0xE7153Adf09F6EccedfFAA935F1d6E57D86996793"
+PoEAddr = "0x4b4dbb855DD2f3CcA9B9e1bB73C487865b8ab0D2"
+MaticAddr = "0x4B53839f1FE653fF86c077F9c618191803A3e9A9"
+GlobalExitRootManagerAddr = "0x055Cfd083610e1e747172AcD3B2e8c06Bf4c1220"
 MultiGasProvider = false
 	[Etherscan]
 		ApiKey = ""
@@ -66,7 +66,7 @@ DefaultSenderAddress = "0x1111111111111111111111111111111111111111"
 SyncInterval = "1s"
 SyncChunkSize = 100
 TrustedSequencerURI = ""
-GenBlockNumber = 17800755
+GenBlockNumber = 8325519
 
 [Sequencer]
 MaxSequenceSize = "2000000"
