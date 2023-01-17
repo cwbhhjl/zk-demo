@@ -1,5 +1,5 @@
 {
-  "root": "0x642281ee360a0954c6cc15614ad5704af1f1f1fb56905892cb7256264026b849",
+  "root": "0x37ff4ec1d318d3a64c8837bbe9583cb84aa1c353d4058ec9527ca628ccf2d39a",
   "genesis": [
     {
       "balance": "100000000000000000000000",
@@ -13,12 +13,6 @@
         "0x000000000000000000000000000000000000000000000000000000000000008b": "0xae4bb80be56b819606589de61d5ec3b522eeb032"
       },
       "contractName": "Bridge"
-    },
-    {
-      "balance": "100000000000000000000000",
-      "nonce": "0",
-      "address": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
-      "pvtKey": "0x00"
     },
     {
       "balance": "0",
