@@ -41,6 +41,7 @@ MaxVerifyBatchTxRetries = 10
 FrequencyForResendingFailedSendBatches = "1s"
 FrequencyForResendingFailedVerifyBatch = "1s"
 WaitTxToBeMined = "2m"
+WaitTxToBeSynced = "10s"
 PercentageToIncreaseGasPrice = 10
 PercentageToIncreaseGasLimit = 10
 
@@ -72,10 +73,11 @@ GenBlockNumber = 8325519
 MaxSequenceSize = "2000000"
 WaitPeriodPoolIsEmpty = "1s"
 WaitPeriodSendSequence = "15s"
-LastBatchVirtualizationTimeMaxWaitPeriod = "10s"
+LastBatchVirtualizationTimeMaxWaitPeriod = "20s"
 WaitBlocksToUpdateGER = 10
 WaitBlocksToConsiderGerFinal = 10
 ElapsedTimeToCloseBatchWithoutTxsDueToNewGER = "60s"
+MinTimeToCloseBatch = "60s"
 MaxTimeForBatchToBeOpen = "15s"
 BlocksAmountForTxsToBeDeleted = 100
 FrequencyToCheckTxsForDelete = "12h"
@@ -97,6 +99,7 @@ MaxAllowedFailedCounter = 50
 Host = "0.0.0.0"
 Port = 50081
 RetryTime = "5s"
+IntervalToConsolidateState = "10s"
 VerifyProofInterval = "90s"
 TxProfitabilityCheckerType = "acceptall"
 TxProfitabilityMinReward = "1.1"
@@ -125,5 +128,5 @@ Port = 61090
 [Metrics]
 Host = "0.0.0.0"
 Port = 9091
-Enabled = true
+Enabled = false
 

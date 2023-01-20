@@ -7,14 +7,19 @@ x-logging:
         max-size: "10m"
         max-file: "5"
 
+x-node-image: 
+      &zkevm-node-image
+      image: hermeznetwork/zkevm-node
+
 networks:
   default:
     name: zkevm
 services:
   zkevm-sequencer:
     container_name: zkevm-sequencer
-    image: zkevm-node
-    # ports:
+    <<: *zkevm-node-image
+    ports:
+      - "127.0.0.1:61090:61090"
       # - 9092:9091 # needed if metrics enabled
     environment:
       - ZKEVM_NODE_STATEDB_HOST=zkevm-state-db
@@ -27,11 +32,11 @@ services:
     command:
       - "/bin/sh"
       - "-c"
-      - "/app/zkevm-node run --genesis /app/genesis.json --cfg /app/config.toml --components sequencer"
+      - "/app/zkevm-node run --genesis /app/genesis.json --cfg /app/config.toml --components \"sequencer,broadcast-trusted-state\""
 
   zkevm-json-rpc:
     container_name: zkevm-json-rpc
-    image: zkevm-node
+    <<: *zkevm-node-image
     ports:
       - 8123:8123
       # - 9091:9091 # needed if metrics enabled
@@ -39,7 +44,7 @@ services:
       - ZKEVM_NODE_STATEDB_HOST=zkevm-state-db
       - ZKEVM_NODE_POOL_HOST=zkevm-state-db
       - ZKEVM_NODE_RPC_DB_HOST=zkevm-state-db
-      - ZKEVM_NODE_RPC_BROADCASTURI=zkevm-broadcast:61090
+      - ZKEVM_NODE_RPC_BROADCASTURI=zkevm-sequencer:61090
     volumes:
       - ./test.keystore:/pk/keystore
       - ./config/test.node.config.toml:/app/config.toml
@@ -52,7 +57,7 @@ services:
 
   zkevm-aggregator:
     container_name: zkevm-aggregator
-    image: zkevm-node
+    <<: *zkevm-node-image
     ports:
       - "127.0.0.1:50081:50081"
     environment:
@@ -69,7 +74,7 @@ services:
 
   zkevm-sync:
     container_name: zkevm-sync
-    image: zkevm-node
+    <<: *zkevm-node-image
     environment:
       - ZKEVM_NODE_STATEDB_HOST=zkevm-state-db
     volumes:
@@ -81,23 +86,6 @@ services:
       - "/bin/sh"
       - "-c"
       - "/app/zkevm-node run --genesis /app/genesis.json --cfg /app/config.toml --components synchronizer"
-
-  zkevm-broadcast:
-    container_name: zkevm-broadcast
-    image: zkevm-node
-    environment:
-      - ZKEVM_NODE_STATEDB_HOST=zkevm-state-db
-    ports:
-      - "127.0.0.1:61090:61090"
-    volumes:
-      - ./test.keystore:/pk/keystore
-      - ./config/test.node.config.toml:/app/config.toml
-      - ./config/test.genesis.config.json:/app/genesis.json
-    logging: *default-logging
-    command:
-      - "/bin/sh"
-      - "-c"
-      - "/app/zkevm-node run --genesis /app/genesis.json --cfg /app/config.toml --components broadcast-trusted-state"
 
   zkevm-state-db:
     container_name: zkevm-state-db
@@ -142,7 +130,7 @@ services:
 
   zkevm-explorer-json-rpc:
     container_name: zkevm-explorer-json-rpc
-    image: zkevm-node
+    <<: *zkevm-node-image
     ports:
       - 8124:8124
     environment:
@@ -170,7 +158,7 @@ services:
       - "127.0.0.1:50071:50071" # Executor
     volumes:
       - ./config/okc.prover.config.json:/usr/src/app/config.json
-      - /data/zkevm/zkevm-proverjs/build/dst/config:/app/config
+      - /data/zkevm/bin/config:/app/config
       - ./output:/app/output
     logging: *default-logging
     command: >
@@ -178,7 +166,7 @@ services:
 
   zkevm-bridge-service:
     container_name: zkevm-bridge-service
-    image: zkevm-bridge-service
+    image: hermeznetwork/zkevm-bridge-service
     ports:
       - 8080:8080
       - 9090:9090
