@@ -7,8 +7,9 @@ x-logging:
         max-size: "10m"
         max-file: "5"
 
-zkevm-node-image: &zkevm-node-image
-  image: hermeznetwork/zkevm-node
+x-node-image: 
+      &zkevm-node-image
+      image: hermeznetwork/zkevm-node
 
 networks:
   default:
