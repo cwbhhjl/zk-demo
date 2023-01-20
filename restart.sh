@@ -7,6 +7,5 @@ docker-compose restart zkevm-sequencer
 docker-compose restart zkevm-aggregator
 docker-compose restart zkevm-json-rpc
 docker-compose restart zkevm-sync
-docker-compose restart zkevm-broadcast
 docker-compose restart zkevm-bridge-service
 docker-compose restart zkevm-bridge-ui
