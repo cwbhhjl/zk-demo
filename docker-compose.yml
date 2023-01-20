@@ -169,7 +169,7 @@ services:
 
   zkevm-bridge-service:
     container_name: zkevm-bridge-service
-    image: zkevm-bridge-service
+    image: hermeznetwork/zkevm-bridge-service
     ports:
       - 8080:8080
       - 9090:9090
