@@ -5,7 +5,6 @@ docker-compose up -d zkevm-prover
 sleep 3
 docker-compose up -d zkevm-aggregator
 docker-compose up -d zkevm-sequencer
-docker-compose up -d zkevm-broadcast
 
 docker-compose up -d zkevm-sync
 docker-compose up -d zkevm-json-rpc
