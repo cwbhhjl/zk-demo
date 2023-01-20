@@ -9,7 +9,8 @@ docker-compose up -d zkevm-sequencer
 docker-compose up -d zkevm-sync
 docker-compose up -d zkevm-json-rpc
 
-docker-compose up -d zkevm-bridge-service
 docker-compose up -d zkevm-bridge-ui
 docker-compose up -d zkevm-explorer-json-rpc
 docker-compose up -d zkevm-explorer-l2
+sleep 5
+docker-compose up -d zkevm-bridge-service
