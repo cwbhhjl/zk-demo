@@ -28,9 +28,9 @@ URL = "https://goerli.infura.io/v3/bb410aa66f77424ab0260937600de8a5"
 L1ChainID = 5
 PrivateKeyPath = "/pk/keystore"
 PrivateKeyPassword = "testonly"
-PoEAddr = "0x4b4dbb855DD2f3CcA9B9e1bB73C487865b8ab0D2"
-MaticAddr = "0x4B53839f1FE653fF86c077F9c618191803A3e9A9"
-GlobalExitRootManagerAddr = "0x055Cfd083610e1e747172AcD3B2e8c06Bf4c1220"
+PoEAddr = "0x71Df81Ad9262e090eb6370B687067c965232A974"
+MaticAddr = "0xe5BB221835388890743B267245363C3878de90a1"
+GlobalExitRootManagerAddr = "0x5C3F31F1F19566811Ccc5839A6C32059CAFC6a20"
 MultiGasProvider = false
 	[Etherscan]
 		ApiKey = ""
@@ -67,7 +67,7 @@ DefaultSenderAddress = "0x1111111111111111111111111111111111111111"
 SyncInterval = "1s"
 SyncChunkSize = 100
 TrustedSequencerURI = ""
-GenBlockNumber = 8325519
+GenBlockNumber = 8343697
 
 [Sequencer]
 MaxSequenceSize = "2000000"
