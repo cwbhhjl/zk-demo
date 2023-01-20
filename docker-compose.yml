@@ -9,7 +9,7 @@ x-logging:
 
 x-node-image: 
       &zkevm-node-image
-      image: hermeznetwork/zkevm-node
+      image: zkevm-node
 
 networks:
   default:
