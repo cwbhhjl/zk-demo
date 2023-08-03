@@ -7,8 +7,8 @@ docker-compose up -d zkevm-mock-l1-network
 sleep 1
 docker-compose up -d zkevm-prover
 
-# error
-docker-compose up -d zkevm-approve 
+# error, ignore
+# docker-compose up -d zkevm-approve 
 sleep 3
 docker-compose up -d zkevm-sync
 
