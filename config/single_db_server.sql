@@ -1,8 +1,7 @@
-CREATE DATABASE test_db;
+CREATE DATABASE state_db;
 CREATE DATABASE pool_db;
 CREATE DATABASE rpc_db;
-CREATE DATABASE l1_explorer_db;
-CREATE DATABASE l2_explorer_db;
+
 CREATE DATABASE prover_db;
 \connect prover_db;
 
