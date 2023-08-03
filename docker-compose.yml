@@ -275,7 +275,7 @@ services:
     container_name: zkevm-bridge-ui
     image: zkevm-bridge-ui:local
     ports:
-      - 8090: 80
+      - 8090:80
     # volumes:
     #   - ./config/bridge-ui-deploy.sh:/app/scripts/deploy.sh
     #   - ./config/bridge-ui.env:/app/.env
