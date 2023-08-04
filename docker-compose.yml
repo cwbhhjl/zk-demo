@@ -273,23 +273,23 @@ services:
 
   zkevm-bridge-ui:
     container_name: zkevm-bridge-ui
-    image: zkevm-bridge-ui:local
+    image: hermeznetwork/zkevm-bridge-ui:mainnet
     ports:
       - 8090:80
     # volumes:
     #   - ./config/bridge-ui-deploy.sh:/app/scripts/deploy.sh
     #   - ./config/bridge-ui.env:/app/.env
     environment:
-      - ETHEREUM_RPC_URL=http://8.218.176.20:8545
-      - ETHEREUM_EXPLORER_URL=http://8.218.176.20:4000
+      - ETHEREUM_RPC_URL=http://8.217.101.128:8545
+      - ETHEREUM_EXPLORER_URL=http://8.217.101.128:4000
       - ETHEREUM_BRIDGE_CONTRACT_ADDRESS=0x0165878A594ca255338adfa4d48449f69242Eb8F
       - ETHEREUM_FORCE_UPDATE_GLOBAL_EXIT_ROOT=true
       - ETHEREUM_PROOF_OF_EFFICIENCY_CONTRACT_ADDRESS=0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6
-      - POLYGON_ZK_EVM_RPC_URL=http://8.218.176.20:8123
-      - POLYGON_ZK_EVM_EXPLORER_URL=http://8.218.176.20:4001
+      - POLYGON_ZK_EVM_RPC_URL=http://8.217.101.128:8123
+      - POLYGON_ZK_EVM_EXPLORER_URL=http://8.217.101.128:4001
       - POLYGON_ZK_EVM_BRIDGE_CONTRACT_ADDRESS=0x9d98deabc42dd696deb9e40b4f1cab7ddbf55988
       - POLYGON_ZK_EVM_NETWORK_ID=1
-      - BRIDGE_API_URL=http://8.218.176.20:8080
+      - BRIDGE_API_URL=http://8.217.101.128:8080
       - ENABLE_FIAT_EXCHANGE_RATES=false
       - ENABLE_OUTDATED_NETWORK_MODAL=false
       - ENABLE_DEPOSIT_WARNING=true
