@@ -276,9 +276,6 @@ services:
     image: hermeznetwork/zkevm-bridge-ui:mainnet
     ports:
       - 8090:80
-    # volumes:
-    #   - ./config/bridge-ui-deploy.sh:/app/scripts/deploy.sh
-    #   - ./config/bridge-ui.env:/app/.env
     environment:
       - ETHEREUM_RPC_URL=http://8.217.101.128:8545
       - ETHEREUM_EXPLORER_URL=http://8.217.101.128:4000
