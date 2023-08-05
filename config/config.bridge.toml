@@ -12,14 +12,14 @@ Port = "5432"
 MaxConns = 20
 
 [ClaimTxManager]
-Enabled = true
+Enabled = false 
 FrequencyToMonitorTxs = "1s"
 PrivateKey = {Path = "/pk/keystore.claimtxmanager", Password = "testonly"}
 RetryInterval = "1s"
 RetryNumber = 10
 
 [Etherman]
-L1URL = "http://8.217.101.128:8545"
+L1URL = "https://goerli.infura.io/v3/bb410aa66f77424ab0260937600de8a5"
 L2URLs = ["http://8.217.101.128:8123"]
 
 [Synchronizer]
@@ -47,7 +47,8 @@ BridgeVersion = "v1"
     MaxConns = 20
 
 [NetworkConfig]
-GenBlockNumber = 1
-PolygonBridgeAddress = "0xff0EE8ea08cEf5cb4322777F5CC3E8A584B8A4A0"
-PolygonZkEVMGlobalExitRootAddress = "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6"
-L2PolygonBridgeAddresses = ["0xff0EE8ea08cEf5cb4322777F5CC3E8A584B8A4A0"]
+GenBlockNumber = 9466743 
+PolygonBridgeAddress = "0xEA0873c537a7f814b9723178cC1b3d956b335682"
+PolygonZkEVMGlobalExitRootAddress = "0x35170307708974016eF23Cc8311E161a7c199beb"
+L2PolygonBridgeAddresses = ["0xEA0873c537a7f814b9723178cC1b3d956b335682"]
+#L1ChainID = 5

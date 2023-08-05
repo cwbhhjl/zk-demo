@@ -10,8 +10,8 @@ sleep 3
 docker-compose up -d zkevm-bridge-db
 sleep 3
 
-docker-compose up -d zkevm-mock-l1-network
-sleep 3
+#docker-compose up -d zkevm-mock-l1-network
+#sleep 3
 
 docker-compose up -d zkevm-prover
 sleep 3
@@ -37,9 +37,9 @@ sleep 3
 docker-compose up -d zkevm-json-rpc
 sleep 3
 
-docker-compose up -d zkevm-explorer-json-rpc
-docker-compose up -d zkevm-explorer-l1
-docker-compose up -d zkevm-explorer-l2
+#docker-compose up -d zkevm-explorer-json-rpc
+#docker-compose up -d zkevm-explorer-l1
+#docker-compose up -d zkevm-explorer-l2
 sleep 10
 docker-compose up -d zkevm-bridge-service
 

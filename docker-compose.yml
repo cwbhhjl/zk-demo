@@ -46,7 +46,7 @@ services:
       - 9093:9091 # needed if metrics enabled
     environment:
       - ZKEVM_NODE_STATEDB_HOST=zkevm-state-db
-      - ZKEVM_NODE_AGGREGATOR_SENDER_ADDRESS=0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+      - ZKEVM_NODE_AGGREGATOR_SENDER_ADDRESS=0xBAF25C3f0e7B21818Ed922a6e01bf25CA31dE19E
     volumes:
       - ./config/test.node.config.toml:/app/config.toml
       - ./config/test.genesis.config.json:/app/genesis.json
@@ -277,14 +277,14 @@ services:
     ports:
       - 8090:80
     environment:
-      - ETHEREUM_RPC_URL=http://8.217.101.128:8545
-      - ETHEREUM_EXPLORER_URL=http://8.217.101.128:4000
-      - ETHEREUM_BRIDGE_CONTRACT_ADDRESS=0xff0EE8ea08cEf5cb4322777F5CC3E8A584B8A4A0
+      - ETHEREUM_RPC_URL=https://goerli.infura.io/v3/bb410aa66f77424ab0260937600de8a5
+      - ETHEREUM_EXPLORER_URL=https://goerli.etherscan.io
+      - ETHEREUM_BRIDGE_CONTRACT_ADDRESS=0xEA0873c537a7f814b9723178cC1b3d956b335682
       - ETHEREUM_FORCE_UPDATE_GLOBAL_EXIT_ROOT=true
-      - ETHEREUM_PROOF_OF_EFFICIENCY_CONTRACT_ADDRESS=0x610178dA211FEF7D417bC0e6FeD39F05609AD788
+      - ETHEREUM_PROOF_OF_EFFICIENCY_CONTRACT_ADDRESS=0x3623a3007f8b47002769d0f229228c8b6E38292c
       - POLYGON_ZK_EVM_RPC_URL=http://8.217.101.128:8123
       - POLYGON_ZK_EVM_EXPLORER_URL=http://8.217.101.128:4001
-      - POLYGON_ZK_EVM_BRIDGE_CONTRACT_ADDRESS=0xff0EE8ea08cEf5cb4322777F5CC3E8A584B8A4A0
+      - POLYGON_ZK_EVM_BRIDGE_CONTRACT_ADDRESS=0xEA0873c537a7f814b9723178cC1b3d956b335682
       - POLYGON_ZK_EVM_NETWORK_ID=1
       - BRIDGE_API_URL=http://8.217.101.128:8080
       - ENABLE_FIAT_EXCHANGE_RATES=false
@@ -317,7 +317,7 @@ services:
     environment:
       - ZKEVM_NODE_STATEDB_HOST=zkevm-state-db
       - ZKEVM_NODE_POOL_DB_HOST=zkevm-pool-db
-      - ZKEVM_NODE_SEQUENCER_SENDER_ADDRESS=0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+      - ZKEVM_NODE_SEQUENCER_SENDER_ADDRESS=0x28E803c70B44BA4ec2b27fa8b53DFd33d1b9c9b1
     volumes:
       - ./config/sequencer.keystore:/pk/sequencer.keystore
       - ./config/test.node.config.toml:/app/config.toml
