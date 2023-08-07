@@ -228,12 +228,13 @@ services:
     container_name: zkevm-prover
     image: hermeznetwork/zkevm-prover:v1.1.4-fork.4 
     ports:
-      # - 50051:50051 # Prover
+      - 50051:50051 # Prover
       - 50052:50052 # Mock prover
       - 50061:50061 # MT
       - 50071:50071 # Executor
     volumes:
       - ./config/test.prover.config.json:/usr/src/app/config.json
+      - /data/zhujianguo/zkevm/v1.1.0-rc.1-fork.4/config:/app/config
     command: >
       zkProver -c /usr/src/app/config.json
 
@@ -255,7 +256,7 @@ services:
     container_name: zkevm-bridge-service
     image: zkevm-bridge-service
     ports:
-      - 8080:8080
+      - 5434:8080
       - 9090:9090
     environment:
       - ZKEVM_BRIDGE_DATABASE_USER=test_user
@@ -275,18 +276,18 @@ services:
     container_name: zkevm-bridge-ui
     image: hermeznetwork/zkevm-bridge-ui:mainnet
     ports:
-      - 8090:80
+      - 80:80
     environment:
-      - ETHEREUM_RPC_URL=https://goerli.infura.io/v3/bb410aa66f77424ab0260937600de8a5
+      - ETHEREUM_RPC_URL=https://goerli.infura.io/v3/0d081e04621c4c69b12649fbb63ef18a
       - ETHEREUM_EXPLORER_URL=https://goerli.etherscan.io
-      - ETHEREUM_BRIDGE_CONTRACT_ADDRESS=0xd247eB4F921B9EeD452c2128def7467c195E9dB8
+      - ETHEREUM_BRIDGE_CONTRACT_ADDRESS=0xD253245F00Fc7e65A9CD804AC45DD484762e02fC
       - ETHEREUM_FORCE_UPDATE_GLOBAL_EXIT_ROOT=true
-      - ETHEREUM_PROOF_OF_EFFICIENCY_CONTRACT_ADDRESS=0x20558bA3C2Cd3f659bD77Db7bF7762ec2DA1C6C4
-      - POLYGON_ZK_EVM_RPC_URL=http://8.217.101.128:8123
-      - POLYGON_ZK_EVM_EXPLORER_URL=http://8.217.101.128:4001
-      - POLYGON_ZK_EVM_BRIDGE_CONTRACT_ADDRESS=0xff0EE8ea08cEf5cb4322777F5CC3E8A584B8A4A0
+      - ETHEREUM_PROOF_OF_EFFICIENCY_CONTRACT_ADDRESS=0xA15e6546Aadc0449276231bD5f402d37666013B4
+      - POLYGON_ZK_EVM_RPC_URL=http://44.232.123.15:8123
+      - POLYGON_ZK_EVM_EXPLORER_URL=http://44.232.123.15:4001
+      - POLYGON_ZK_EVM_BRIDGE_CONTRACT_ADDRESS=0xD253245F00Fc7e65A9CD804AC45DD484762e02fC
       - POLYGON_ZK_EVM_NETWORK_ID=1
-      - BRIDGE_API_URL=http://8.217.101.128:8080
+      - BRIDGE_API_URL=http://44.232.123.15:5434
       - ENABLE_FIAT_EXCHANGE_RATES=false
       - ENABLE_OUTDATED_NETWORK_MODAL=false
       - ENABLE_DEPOSIT_WARNING=true

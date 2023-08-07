@@ -14,7 +14,7 @@ sleep 3
 #sleep 3
 
 docker-compose up -d zkevm-prover
-sleep 3
+sleep 20
 
 # error, ignore
 docker-compose up -d zkevm-approve 
@@ -40,7 +40,7 @@ sleep 3
 #docker-compose up -d zkevm-explorer-json-rpc
 #docker-compose up -d zkevm-explorer-l1
 #docker-compose up -d zkevm-explorer-l2
-sleep 10
+sleep 20
 docker-compose up -d zkevm-bridge-service
 
 
