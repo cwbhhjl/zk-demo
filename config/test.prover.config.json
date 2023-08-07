@@ -3,8 +3,8 @@
     "runExecutorClient": false,
     "runExecutorClientMultithread": false,
 
-    "runHashDBServer": true,
-    "runHashDBTest": false,
+    "runStateDBServer": true,
+    "runStateDBTest": false,
 
     "runAggregatorServer": false,
     "runAggregatorClient": false,
@@ -51,8 +51,8 @@
     "executorClientPort": 50071,
     "executorClientHost": "127.0.0.1",
 
-    "hashDBServerPort": 50061,
-    "hashDBURL": "local",
+    "stateDBServerPort": 50061,
+    "stateDBURL": "local",
 
     "aggregatorServerPort": 50081,
     "aggregatorClientPort": 50081,
@@ -75,17 +75,12 @@
     "dbMultiWrite": true,
     "dbFlushInParallel": false,
     "dbMTCacheSize": 1024,
-    "dbProgramCacheSize": 512,
+    "dbProgramCacheSize": 1024,
     "dbNumberOfPoolConnections": 30,
-    "dbGetTree": true,
     "cleanerPollingPeriod": 600,
     "requestsPersistence": 3600,
     "maxExecutorThreads": 20,
     "maxProverThreads": 8,
-    "maxHashDBThreads": 8,
-
-    "ECRecoverPrecalc": true,
-    "ECRecoverPrecalcNThreads": 16,
-    "dbMultiWriteSinglePosition": false
+    "maxStateDBThreads": 8
 }
 

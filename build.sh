@@ -1,6 +1,6 @@
 cd ../
-git clone -b release/v0.2.1 https://github.com/0xPolygonHermez/zkevm-node.git
-git clone -b release/v0.2.0 https://github.com/0xPolygonHermez/zkevm-bridge-service.git
+git clone -b v0.1.2 https://github.com/0xPolygonHermez/zkevm-node.git
+git clone -b v0.1.0 https://github.com/0xPolygonHermez/zkevm-bridge-service.git
 
 cd ./zkevm-node
 make build-docker
