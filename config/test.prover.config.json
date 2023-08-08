@@ -6,9 +6,9 @@
     "runStateDBServer": true,
     "runStateDBTest": false,
 
-    "runAggregatorServer": false,
-    "runAggregatorClient": false,
-    "runAggregatorClientMock": true, 
+    "runAggregatorServer": true,
+    "runAggregatorClient": true,
+    "runAggregatorClientMock": false, 
     "aggregatorClientMockTimeout": 1,
     "proverName": "test-prover",
     

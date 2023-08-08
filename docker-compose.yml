@@ -24,7 +24,7 @@ services:
     container_name: zkevm-json-rpc
     image: zkevm-node
     ports:
-      - 8123:8123
+      - 26650:8123
       - 8133:8133 # needed if WebSockets enabled
       - 9091:9091 # needed if metrics enabled
     environment:
@@ -82,7 +82,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ./config/init_prover_db.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./config/init_db.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       - POSTGRES_USER=state_user
       - POSTGRES_PASSWORD=state_password
@@ -159,7 +159,7 @@ services:
     container_name: zkevm-explorer-l2
     image: hermeznetwork/zkevm-explorer:latest
     ports:
-      - 4001:4000
+      - 6379:4000
     environment:
       - NETWORK=POE
       - SUBNETWORK=Polygon Hermez
@@ -234,6 +234,7 @@ services:
       - 50071:50071 # Executor
     volumes:
       - ./config/test.prover.config.json:/usr/src/app/config.json
+      - /data/scf_new/config:/app/config
     command: >
       zkProver -c /usr/src/app/config.json
 
@@ -255,7 +256,7 @@ services:
     container_name: zkevm-bridge-service
     image: zkevm-bridge-service
     ports:
-      - 8080:8080
+      - 36656:8080
       - 9090:9090
     environment:
       - ZKEVM_BRIDGE_DATABASE_USER=test_user
@@ -275,18 +276,18 @@ services:
     container_name: zkevm-bridge-ui
     image: hermeznetwork/zkevm-bridge-ui:mainnet
     ports:
-      - 8090:80
+      - 26656:80
     environment:
-      - ETHEREUM_RPC_URL=https://goerli.infura.io/v3/bb410aa66f77424ab0260937600de8a5
-      - ETHEREUM_EXPLORER_URL=https://goerli.etherscan.io
-      - ETHEREUM_BRIDGE_CONTRACT_ADDRESS=0xd247eB4F921B9EeD452c2128def7467c195E9dB8
+      - ETHEREUM_RPC_URL=http://54.248.60.244:8545
+      - ETHEREUM_EXPLORER_URL=http://54.248.60.244:4000
+      - ETHEREUM_BRIDGE_CONTRACT_ADDRESS=0xff0EE8ea08cEf5cb4322777F5CC3E8A584B8A4A0
       - ETHEREUM_FORCE_UPDATE_GLOBAL_EXIT_ROOT=true
-      - ETHEREUM_PROOF_OF_EFFICIENCY_CONTRACT_ADDRESS=0x20558bA3C2Cd3f659bD77Db7bF7762ec2DA1C6C4
-      - POLYGON_ZK_EVM_RPC_URL=http://8.217.101.128:8123
-      - POLYGON_ZK_EVM_EXPLORER_URL=http://8.217.101.128:4001
+      - ETHEREUM_PROOF_OF_EFFICIENCY_CONTRACT_ADDRESS=0x610178dA211FEF7D417bC0e6FeD39F05609AD788
+      - POLYGON_ZK_EVM_RPC_URL=http://54.248.60.244:26650
+      - POLYGON_ZK_EVM_EXPLORER_URL=http://54.248.60.244:6379
       - POLYGON_ZK_EVM_BRIDGE_CONTRACT_ADDRESS=0xff0EE8ea08cEf5cb4322777F5CC3E8A584B8A4A0
       - POLYGON_ZK_EVM_NETWORK_ID=1
-      - BRIDGE_API_URL=http://8.217.101.128:8080
+      - BRIDGE_API_URL=http://54.248.60.244:36656
       - ENABLE_FIAT_EXCHANGE_RATES=false
       - ENABLE_OUTDATED_NETWORK_MODAL=false
       - ENABLE_DEPOSIT_WARNING=true
